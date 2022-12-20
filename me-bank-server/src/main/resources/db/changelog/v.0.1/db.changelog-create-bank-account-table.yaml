@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20122022-create-bank-account-table
+      author: egorov_vladimir
+      changes:
+        - createTable:
+            tableName: bank_account
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    unique: true
+                    primaryKey: true
+              - column:
+                  name: balance
+                  type: BIGINT
+                  defaultValue: 0
+                  constraints:
+                    nullable: false
